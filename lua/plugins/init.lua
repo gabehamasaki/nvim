@@ -270,13 +270,6 @@ local default_plugins = {
     require("copilot").setup({})
   end,
 },
-    {
-        "voldikss/vim-floaterm",
-          event = "VeryLazy",
-        keys = {
-          { "<leader>o", "<cmd>FloatermToggle<cr>", desc = "Terminal" },
-        },
-    }
 }
 
 local config = require("core.utils").load_config()
