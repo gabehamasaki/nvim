@@ -63,10 +63,11 @@ lspconfig.tsserver.setup {
 }
 
 lspconfig.intelephense.setup({
+    on_attach = on_attach,
 	capabilities = capabilities,
 })
 
-.
+
 lspconfig.volar.setup({
     on_attach = on_attach,
     capabilities = capabilities,
