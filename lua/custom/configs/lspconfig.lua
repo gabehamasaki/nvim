@@ -43,14 +43,13 @@ lspconfig.tsserver.setup {
         preferences = {
             disableSuggestions = true,
         },
-        plugins = {
+            plugins = {
       {
-        name = '@vue/typescript-plugin',
-        location = vue_language_server_path,
-        languages = { 'vue' },
+        name = "@vue/typescript-plugin",
+        location = "/home/gabriel/.asdf/installs/nodejs/20.13.1/lib/node_modules/@vue/typescript-plugin/",
+        languages = {"javascript", "typescript", "vue"},
       },
     },
-
     },
     commands = {
         OrganizeImports = {
@@ -58,8 +57,13 @@ lspconfig.tsserver.setup {
           description = "Organize Imports",
         }
     },
-      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-
+        filetypes = {
+    'javascript',
+    'javascriptreact',
+    'typescript',
+    'typescriptreact',
+    'vue',
+  },
 }
 
 lspconfig.intelephense.setup({
@@ -71,7 +75,16 @@ lspconfig.intelephense.setup({
 lspconfig.volar.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = { 'vue', 'typescript', 'javascript' }
+      filetypes = { 'vue' },
+  settings = {
+    vue = {
+      complete = {
+        casing = {
+          props = 'autoCamel',
+        },
+      },
+    },
+  },
 })
 
 lspconfig.html.setup({
