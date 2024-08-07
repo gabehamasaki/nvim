@@ -22,10 +22,6 @@ lspconfig.gopls.setup({
     },
 })
 
-			lspconfig.intelephense.setup({
-				capabilities = capabilities,
-			})
-
 local function organize_imports()
     local params = {
       command = "_typescript.organizeImports",
@@ -47,6 +43,14 @@ lspconfig.tsserver.setup {
         preferences = {
             disableSuggestions = true,
         },
+        plugins = {
+      {
+        name = '@vue/typescript-plugin',
+        location = vue_language_server_path,
+        languages = { 'vue' },
+      },
+    },
+
     },
     commands = {
         OrganizeImports = {
@@ -54,7 +58,20 @@ lspconfig.tsserver.setup {
           description = "Organize Imports",
         }
     },
+      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+
 }
+
+lspconfig.intelephense.setup({
+	capabilities = capabilities,
+})
+
+.
+lspconfig.volar.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { 'vue', 'typescript', 'javascript' }
+})
 
 lspconfig.html.setup({
     on_attach = on_attach,
