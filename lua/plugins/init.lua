@@ -265,11 +265,18 @@ local default_plugins = {
 {
   "zbirenbaum/copilot.lua",
   cmd = "Copilot",
-  event = "InsertEnter",
+      event = "InsertEnter",
   config = function()
     require("copilot").setup({})
   end,
 },
+    {
+        "voldikss/vim-floaterm",
+          event = "VeryLazy",
+        keys = {
+          { "<leader>o", "<cmd>FloatermToggle<cr>", desc = "Terminal" },
+        },
+    }
 }
 
 local config = require("core.utils").load_config()
