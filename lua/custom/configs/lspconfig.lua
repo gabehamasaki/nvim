@@ -22,6 +22,10 @@ lspconfig.gopls.setup({
     },
 })
 
+			lspconfig.intelephense.setup({
+				capabilities = capabilities,
+			})
+
 local function organize_imports()
     local params = {
       command = "_typescript.organizeImports",
