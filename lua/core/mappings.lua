@@ -138,7 +138,7 @@ M.lspconfig = {
     },
 
     ["gd"] = {
-      function()
+     function()
         vim.lsp.buf.definition()
       end,
       "LSP definition",
@@ -277,7 +277,7 @@ M.telescope = {
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
     ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
-
+    ["<leader>ft"] = {  "<cmd> TodoTelescope  <CR>" },
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
     ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "Git status" },
@@ -290,6 +290,14 @@ M.telescope = {
 
     ["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
   },
+}
+
+M.copilot = {
+    plugin = true,
+
+    n = {
+        ["<A-c>"] = { "<cmd> Copilot suggestion <CR>", "Enable Copilot suggestion" }
+    }
 }
 
 M.nvterm = {

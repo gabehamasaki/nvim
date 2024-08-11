@@ -266,6 +266,9 @@ local default_plugins = {
   "zbirenbaum/copilot.lua",
   cmd = "Copilot",
       event = "InsertEnter",
+    init = function ()
+              require("core.utils").load_mappings("copilot")
+    end,
   config = function()
     require("copilot").setup({
                   suggestion = {

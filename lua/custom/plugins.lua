@@ -199,6 +199,11 @@ local plugins = {
 
 		vim.keymap.set("n", "<Leader>q", ":DBUIToggle<CR>")
 	end,
-}
+},
+    {  "nvim-lua/plenary.nvim" },
+    {
+  "folke/todo-comments.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+    },
 }
 return plugins
