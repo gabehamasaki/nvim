@@ -288,6 +288,13 @@ local default_plugins = {
             })
   end,
 },
+
+    {
+        "ThePrimeagen/vim-be-good",
+        cmd = {
+            "VimBeGood",
+        },
+    },
 }
 
 local config = require("core.utils").load_config()
